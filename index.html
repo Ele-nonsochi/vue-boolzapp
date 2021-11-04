@@ -15,85 +15,119 @@
 
 <body>
     <div id="root">
-        <main class="page-background">
+        <main>
+            <div class="page-background"></div>
             <div class="page-top"></div>
             <div class="container page-container">
                 <!--Left Side-->
                 <div class="row">
-                    <div class="col-4 d-flex flex-column px-0">
-                        <div class="side-left-box py-1">
-                            <div class="user-container d-flex justify-content-around mb-1" style="height: 60px;">
-                                <div class="col-3 text-center">
-                                    <img src="img/avatar_io.jpg" alt="image" class="rounded-pill overflow-hidden"
-                                        style="height: 100%;">
+                    <div class="col-4  px-0">
+                        <div class="side-left-nav bg-nav d-flex py-1">
+                            <div class="user-container d-flex flex-grow-1 align-items-center">
+                                <div class="avatar-nav flex-shrink-0">
+                                    <img src="img/avatar_io.jpg" alt="image">
                                 </div>
-                                <div class="col-5 d-flex align-items-center">
-                                    <h6 class="user-name">Nome utente</h6>
-
-                                </div>
-                                <div class="col-4 d-flex align-items-center justify-content-end">
-                                    <a href="#" class="nav-icon"><i class="fas fa-sync-alt"></i></a>
-                                    <a href="#" class="nav-icon"><i class="fas fa-comment-alt"></i></a>
-                                    <a href="#" class="nav-icon"><i class="fas fa-ellipsis-v"></i></a>
-                                </div>
+                                <h6 class="user-name">Nome utente</h6>
                             </div>
-                            <div class="alert-left d-flex p-2">
-                                <div class="col-2 rounded-pill text-center">
-                                    <i class="far fa-bell-slash rounded-circle bg-light p-3"></i>
-                                </div>
-                                <div class="col-10 px-2">
-                                    <p class="font-weight-bold m-0">Ricevi notifiche di nuovi messaggi</p>
-                                    <p class="m-0 alert-text">Attiva notifiche desktop</p>
-                                </div>
+                            <div class="d-flex align-items-center justify-content-end pe-3 gap-2">
+                                <a href="#" class="nav-icon"><i class="fas fa-sync-alt"></i></a>
+                                <a href="#" class="nav-icon"><i class="fas fa-comment-alt"></i></a>
+                                <a href="#" class="nav-icon"><i class="fas fa-ellipsis-v"></i></a>
                             </div>
-                            <div class="search-bar p-1 my-2">
-                                <div class="d-flex align-items-center bg-light rounded">
-                                    <i class="fas fa-search w-25 text-center"></i>
-                                    <input type="search" class="h-100 flex-grow-1 border-0 w-100"
-                                        placeholder="Cerca o inizia una nuova chat">
 
-                                </div>
+                        </div>
+                        <div class="alert-left d-flex p-2">
+                            <div class="col-2 rounded-pill text-center">
+                                <i class="far fa-bell-slash rounded-circle bg-light p-3"></i>
                             </div>
-                            <!--Chat-->
-                            <div class="chat-container d-flex flex-column">
-                                <!--Chat Singola-->
-                                <div class="user-container border-bottom p-1">
-                                    <div class="d-flex justify-content-around my-2" style="height: 40px;">
-                                        <div class="col-3 text-center">
-                                            <img src="img/avatar_1.jpg" alt="image"
-                                                class="rounded-pill overflow-hidden h-100">
-                                        </div>
-                                        <div class="col-5">
-                                            <h6 class="user-name-chat">Michele</h6>
-                                            <p class="user-prevtext">ciao</p>
-                                        </div>
-                                        <div class="col-4 text-end">
-                                            <p class="user-date">03/11/2021</p>
-                                        </div>
-                                    </div>
-                                </div>
-
+                            <div class="col-10 px-2">
+                                <p class="font-weight-bold m-0">Ricevi notifiche di nuovi messaggi</p>
+                                <p class="m-0 alert-text">Attiva notifiche desktop</p>
                             </div>
                         </div>
+
+                        <div class="search-bar p-2">
+                            <div class="input-group">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i
+                                        class="fas fa-search"></i></button>
+                                <input type="text" class="form-control" placeholder="Cerca o inizia la chat"
+                                    aria-label="Example text with button addon" aria-describedby="button-addon1">
+                            </div>
+                        </div>
+                        <!--Chat-->
+                        <div class="chat-container me-2">
+                            <!--Chat Singola-->
+                            <div v-for="(contact, i) in contacts" class="chat-list d-flex p-2" style="height: 60px">
+                                <div class="col-3 text-center">
+                                    <img src="img/avatar_1.jpg" alt="image" class="rounded-pill overflow-hidden h-100">
+                                </div>
+                                <div class="col-5 text-long">
+                                    <h6 class="user-name-chat">Michele</h6>
+                                    <p class="user-prevtext">ciao</p>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <p class="user-date">03/11/2021</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+
                     </div>
                     <!--Right Side-->
-                    <div class="col-8 d-flex flex-column px-2">
-                        <div class="side-right-box">
-                            <div class="user-container d-flex justify-content-around mb-1" style="height: 60px;">
-                                <div class="col-3">
-                                    <img src="img/avatar_io.jpg" alt="image" class="rounded-pill overflow-hidden mt-1"
-                                        style="height: 100%;">
+                    <div class="col-8 ps-0">
+
+                        <!-- chat nav -->
+                        <div class="right-navbar-container">
+                            <div class="side-left-nav bg-nav d-flex py-1">
+                                <div class="user-container d-flex flex-grow-1 align-items-center">
+                                    <div class="avatar-nav flex-shrink-0">
+                                        <img src="img/avatar_1.jpg" alt="image">
+                                    </div>
+                                    <div class="ps-2">
+                                        <h6 class="m-0">Nome utente</h6>
+                                        <span class="fs-6">ultimo accesso</span>
+                                    </div>
                                 </div>
-                                <div class="col-5 d-flex">
-                                    <h6 class="user-name">Nome utente</h6>
-                                </div>
-                                <div class="col-4 d-flex align-items-center justify-content-end">
+                                <div class="d-flex align-items-center justify-content-end pe-3 gap-2">
                                     <a href="#" class="nav-icon"><i class="fas fa-search"></i></a>
                                     <a href="#" class="nav-icon"><i class="fas fa-paperclip"></i></a>
                                     <a href="#" class="nav-icon"><i class="fas fa-ellipsis-v"></i></a>
                                 </div>
+
                             </div>
                         </div>
+
+                        <!-- Chat- messaggi Container -->
+                        <div class="bg-chat">
+                            <div class="text-send msg-space">
+                                <div class="msg-container d-flex flex-colum">
+                                    <p class="m-0">Ciao come stai?</p>
+                                    <p class="info-text"> 03/11/202 </p>
+                                </div>
+                            </div>
+                            <div class="text-recived  msg-space">
+                                <div class="msg-container d-flex flex-colum">
+                                    <p class="m-0">Ciao come stai?</p>
+                                    <p class="info-text"> 03/11/202 </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Input nuovo mesaggio -->
+                        <div class="d-flex p-2 gap-1">
+                            <button class="btn btn-outline-secondary border-0" type="button" id="button-addon1"><i
+                                    class="fs-4 far fa-smile"></i></button>
+                            <div class="input-group">
+                                <input type="text" class="form-control bbb" placeholder="Scrivi un messaggio"
+                                    aria-label="Recipient's username" aria-describedby="button-addon2">
+                            </div>
+                            <button class="btn btn-outline-secondary border-0" type="button" id="button-addon2"><i
+                                    class="fs-4 fas fa-microphone"></i></button>
+                        </div>
+
+
                     </div>
 
 
