@@ -59,14 +59,14 @@
                             <!--Chat Singola-->
                             <div v-for="(contact, i) in contacts" class="chat-list d-flex p-2" style="height: 60px">
                                 <div class="col-3 text-center">
-                                    <img src="img/avatar_1.jpg" alt="image" class="rounded-pill overflow-hidden h-100">
+                                    <img :src="contact.avatar" alt="image" class="rounded-pill overflow-hidden h-100">
                                 </div>
                                 <div class="col-5 text-long">
-                                    <h6 class="user-name-chat">Michele</h6>
-                                    <p class="user-prevtext">ciao</p>
+                                    <h6 class="user-name-chat">{{contact.name}}</h6>
+                                    <p class="user-prevtext">{{contact.messages}}</p>
                                 </div>
                                 <div class="col-4 text-end">
-                                    <p class="user-date">03/11/2021</p>
+                                    <p class="user-date">{{contact.lastdate}}</p>
                                 </div>
                             </div>
 
