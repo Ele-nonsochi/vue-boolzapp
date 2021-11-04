@@ -7,8 +7,12 @@
 .page-background{
     background-color:#d4dad9;
     /*background: linear-gradien(#d4dad9, yellow);*/
-    position: relative;
+    position: absolute;
     height: 100vh;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
 }
 
 .page-top{
@@ -18,7 +22,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 99;
+    z-index: -1;
 }
 
 .page-container{
@@ -30,9 +34,30 @@
     background-color: white;
 }
 
-.side-left-box{
+.side-left-nav{
     flex-shrink: 0;
-    background-color: #EAE9EA;
+}
+
+.bg-nav{
+    background-color: #ebeaeb;
+}
+
+.user-container{
+    width: 100px;
+    height: 50px;
+}
+
+.avatar-nav img{
+    height: 100%;
+    width: 100%;
+}
+
+.avatar-nav{
+    height: 50px;
+    width: 50px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .user-name{
@@ -70,6 +95,11 @@
     flex-grow: 1;
     overflow: auto;
     background-color: white;
+    height: calc(90vh - 70px - 66px - 54px);
+}
+
+.chat-list:hover{
+    background-color: rgba(65, 64, 64, 0.116);
 }
 
 .user-name-chat{
@@ -86,5 +116,66 @@
     padding: 5px 0;
 }
 
+.text-long{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
 /*Side Right*/
 
+.bg-chat{
+    background-image: url("../img/mine.jpg");
+    overflow: auto;
+    height: calc(90vh - 66px - 54px);
+    margin-right: 5px;
+}
+
+.text-send{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.text-recived{
+   display: flex;
+}
+
+.msg-space{
+    padding: 10px 20px;
+}
+
+.msg-container{
+    background-color: #d6fabe;
+    border-radius: 10px;
+    padding: 5px 15px;
+}
+
+.info-text{
+    font-size: 12px;
+    text-align: end;
+}
+
+/*Effetti da cambiare*/
+
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: #ced4da;
+}
+
+.btn-outline-secondary {
+    color: #b7b9bb;
+}
+
+
+.form-control:focus {
+    border-color: #000000;
+    border-left: 1px solid;
+    box-shadow: 0 0 0 0rem rgb(13 110 253 / 25%);
+}
+
+.btn-outline-secondary:focus {
+    box-shadow: 0 0 0 0rem rgb(108 117 125 / 50%);
+}
+.btn-outline-secondary:active:focus {
+    box-shadow: 0 0 0 0rem rgb(108 117 125 / 50%);
+}
